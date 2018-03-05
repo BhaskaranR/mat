@@ -1,0 +1,64 @@
+<mat-card class="demo-dialog-card">
+  <mat-card-title>Dialog</mat-card-title>
+  <mat-card-subtitle>matDialog is a service, which opens dialogs components in the view.</mat-card-subtitle>
+  <mat-card-content>
+    <button mat-raised-button color="primary" (click)="openJazz()">
+      Open dialog
+    </button>
+    <button mat-raised-button color="accent" (click)="openContentElement()">
+      Open dialog with content elements
+    </button>
+    <button mat-raised-button color="accent" (click)="openTemplate()">
+      Open dialog with template content
+    </button>
+
+    <p>Dialog dimensions</p>
+    <mat-form-field style="width: 100%">
+      <input matInput [(ngModel)]="config.width" placeholder="Width">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput [(ngModel)]="config.height" placeholder="Height">
+    </mat-form-field>
+
+    <p>Dialog position</p>
+    <mat-form-field style="width: 100%">
+      <input matInput [(ngModel)]="config.position.top" (change)="config.position.bottom = ''" placeholder="Top">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput [(ngModel)]="config.position.bottom" (change)="config.position.top = ''" placeholder="Bottom">
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%">
+      <input matInput [(ngModel)]="config.position.left" (change)="config.position.right = ''" placeholder="Left">
+    </mat-form-field>
+    <mat-form-field style="width: 100%">
+      <input matInput [(ngModel)]="config.position.right" (change)="config.position.left = ''" placeholder="Right">
+    </mat-form-field>
+
+    <p>Dialog backdrop</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="config.backdropClass" placeholder="Backdrop class">
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="config.hasBackdrop">Has backdrop</mat-checkbox>
+
+    <p>Other options</p>
+
+    <mat-select placeholder="Button alignment" [(ngModel)]="actionsAlignment">
+      <mat-option>Start</mat-option>
+      <mat-option value="end">End</mat-option>
+      <mat-option value="center">Center</mat-option>
+    </mat-select>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="config.data.message" placeholder="Dialog message">
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="config.disableClose">Disable close</mat-checkbox>
+
+    <p>Last close result: {{lastCloseResult}}</p>
+  </mat-card-content>
+</mat-card>
+<ng-template>
+  I'm a template dialog. I've been opened {{numTemplateOpens}} times!
+</ng-template>

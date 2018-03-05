@@ -1,0 +1,76 @@
+<mat-card>
+  <mat-card-title>Progress spinner</mat-card-title>
+  <mat-card-subtitle>mat-progress-spinner is a component for indicating progress and activity, matching the spec of Material Design Progress & Activity.</mat-card-subtitle>
+  <mat-card-content>
+    <p>Determinate</p>
+    <div class="mb-1">
+      <div fxLayout="row">
+        <mat-progress-spinner mode="determinate"
+                      [value]="progressValue"
+                      class="primary"></mat-progress-spinner>
+        <mat-progress-spinner mode="determinate" [value]="progressValue"
+                      color="accent"></mat-progress-spinner>
+        <mat-progress-spinner mode="determinate" [value]="progressValue"
+                      color="warn"></mat-progress-spinner>
+      </div>
+    </div>
+
+    <button mat-raised-button class="mr-1" (click)="step(10)">Increase</button>
+    <button mat-raised-button (click)="step(-10)">Decrease</button>
+
+    <p class="mt-1">Indeterminate</p>
+    <div>
+      <div fxLayout="row">
+        <mat-progress-spinner mode="indeterminate"
+                      class="primary"></mat-progress-spinner>
+        <mat-progress-spinner mode="indeterminate"
+                      color="accent"></mat-progress-spinner>
+        <mat-progress-spinner mode="indeterminate"
+                      color="warn"></mat-progress-spinner>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Progress bar</mat-card-title>
+  <mat-card-subtitle>mat-progress-bar is a component for indicating progress and activity, matching the spec of Material Design Progress & Activity</mat-card-subtitle>
+  <mat-card-content>
+    <p>Determinate</p>
+    <mat-progress-bar mode="determinate"
+                       [value]="determinateProgressValue"
+                       color="primary"
+                       class="mb-1"></mat-progress-bar>
+    <button mat-raised-button class="mr-1" (click)="stepDeterminateProgressVal(10)">Increase</button>
+    <button mat-raised-button (click)="stepDeterminateProgressVal(-10)">Decrease</button>
+
+    <p>Buffer</p>
+    <mat-progress-bar [value]="bufferProgressValue"
+                       [bufferValue]="bufferBufferValue"
+                       mode="buffer"
+                       color="warn"
+                       class="mb-1"></mat-progress-bar>
+
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <button mat-raised-button class="mr-1 mb-xs" (click)="stepBufferProgressVal(10)">Increase</button>
+      <button mat-raised-button class="mb-xs" (click)="stepBufferProgressVal(-10)">Decrease</button>
+      <span fxFlex></span>
+      <button mat-raised-button class="mr-1 mb-xs" (click)="stepBufferBufferVal(10)">Increase</button>
+      <button mat-raised-button class="mb-xs" (click)="stepBufferBufferVal(-10)">Decrease</button>
+    </div>
+
+    <p>Indeterminate</p>
+    <mat-progress-bar mode="indeterminate"
+                       class="mb-1"></mat-progress-bar>
+
+    <p>Query</p>
+    <mat-progress-bar mode="query"
+                       class="mb-1"></mat-progress-bar>
+
+    <p>Colors</p>
+    <mat-progress-bar mode="indeterminate" color="primary" class="mb-1"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" color="accent" class="mb-1"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" color="warn" class="mb-1"></mat-progress-bar>
+
+  </mat-card-content>
+</mat-card>

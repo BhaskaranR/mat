@@ -1,0 +1,67 @@
+<mat-card>
+  <mat-card-title>Tooltips</mat-card-title>
+  <mat-card-subtitle>Tooltip allows the user to specify text to be displayed when the mouse hovers over an element.</mat-card-subtitle>
+  <mat-card-content>
+    <div class="centered" cdk-scrollable>
+    <button #tooltip="matTooltip"
+            mat-raised-button
+            color="primary"
+            [matTooltip]="message"
+            [matTooltipPosition]="position"
+            [matTooltipDisabled]="disabled"
+            [matTooltipShowDelay]="showDelay"
+            [matTooltipHideDelay]="hideDelay"
+            [matTooltipClass]="{'red-tooltip': showExtraClass}">
+      Mouse over to see the tooltip
+    </button>
+  </div>
+
+  <p class="mt-1">
+    <mat-radio-group [(ngModel)]="position">
+      <mat-radio-button value="below">Below</mat-radio-button>
+      <mat-radio-button value="above">Above</mat-radio-button>
+      <mat-radio-button value="left">Left</mat-radio-button>
+      <mat-radio-button value="right">Right</mat-radio-button>
+      <mat-radio-button value="before">Before</mat-radio-button>
+      <mat-radio-button value="after">After</mat-radio-button>
+    </mat-radio-group>
+  </p>
+  <p>
+    <strong>Message: </strong>
+    <mat-form-field><input matInput type="text" [(ngModel)]="message"></mat-form-field>
+  </p>
+
+  <p>
+    <strong>Disabled: </strong>
+    <mat-checkbox [(ngModel)]="disabled"></mat-checkbox>
+  </p>
+
+  <p>
+    <strong>Show Delay (ms): </strong>
+    <mat-form-field>
+      <input matInput type="number" [(ngModel)]="showDelay">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <strong>Hide Delay (ms): </strong>
+    <mat-form-field>
+      <input matInput type="number" [(ngModel)]="hideDelay">
+    </mat-form-field>
+  </p>
+
+  <strong>Mouse over to</strong>
+  <button mat-raised-button color="primary" (mouseenter)="tooltip.show()">
+    Show tooltip
+  </button>
+  <button mat-raised-button color="primary" (mouseenter)="tooltip.hide()">
+    Hide tooltip
+  </button>
+  <button mat-raised-button color="primary" (mouseenter)="tooltip.toggle()">
+    Toggle tooltip
+  </button>
+  <button mat-raised-button color="primary" (mouseenter)="showExtraClass = !showExtraClass">
+    Toggle tooltipClass
+  </button>
+  </mat-card-content>
+</mat-card>

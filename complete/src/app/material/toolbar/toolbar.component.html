@@ -1,0 +1,63 @@
+<mat-card>
+  <mat-card-title>Toolbar</mat-card-title>
+  <mat-card-subtitle>matToolbar is a vertical aligned bar, which can hold the application title or actions.</mat-card-subtitle>
+  <mat-card-content>
+    <p>The default color toolbar:</p>
+    <mat-toolbar>
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Default Toolbar</span>
+      <span fxFlex></span>
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
+    <p>The primary color toolbar:</p>
+    <mat-toolbar color="primary">
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Primary Toolbar</span>
+      <span fxFlex></span>
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
+    <p>The accent color toolbar:</p>
+    <mat-toolbar color="accent">
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Accent Toolbar</span>
+      <span fxFlex></span>
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-button href="#" mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
+    <p>An accent toolbar using the second toolbar row:</p>
+    <mat-toolbar color="accent">
+      <mat-toolbar-row>
+        <span>Second Line Toolbar</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <p>A primary toolbar using the third toolbar row:</p>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row></mat-toolbar-row>
+      <mat-toolbar-row>
+        <span fxFlex>Third Line Toolbar</span>
+        <mat-icon>favorite</mat-icon>
+        <mat-icon>delete</mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </mat-card-content>
+</mat-card>

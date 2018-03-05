@@ -1,0 +1,91 @@
+<mat-card>
+  <mat-card-title>Grid List</mat-card-title>
+  <mat-card-subtitle>mat-grid-list is an alternative list view that arranges cells into grid-based layout.</mat-card-subtitle>
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template matTabLabel>Fixed height</ng-template>
+      <mat-card-content>
+        <mat-grid-list [cols]="fixedCols" [rowHeight]="fixedRowHeight">
+          <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+                        [style.background]="tile.color">
+            {{tile.text}}
+          </mat-grid-tile>
+        </mat-grid-list>
+        <div fxLayout="row"  fxLayoutAlign="start center" class="mt-2">
+          <mat-form-field>
+            <input matInput placeholder="Change list cols" type="number" [(ngModel)]="fixedCols">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Change row height" type="number" [(ngModel)]="fixedRowHeight">
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <hr>
+      <mat-card-actions>
+        <button mat-button (click)="addTileCols()" color="primary">ADD COLSPAN (THREE)</button>
+      </mat-card-actions>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Ratio height</ng-template>
+      <mat-card-content>
+        <mat-grid-list cols="2" [rowHeight]="ratio" gutterSize="4px">
+          <mat-grid-tile *ngFor="let tile of tiles" [style.background]="'lightblue'">
+            {{tile.text}}
+          </mat-grid-tile>
+        </mat-grid-list>
+        <div  fxLayout="row" fxLayoutAlign="start center" class="mt-2">
+          <mat-form-field>
+            <input matInput placeholder="Change ratio" [(ngModel)]="ratio">
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Fit height</ng-template>
+      <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="fit" [gutterSize]="ratioGutter"
+                      [style.height]="fitListHeight">
+          <mat-grid-tile *ngFor="let tile of tiles" [style.background]="'#F1EBBA'">
+            {{tile.text}}
+          </mat-grid-tile>
+        </mat-grid-list>
+        <div  fxLayout="row" fxLayoutAlign="start center" class="mt-2">
+          <mat-form-field>
+            <input matInput placeholder="Change list height" [(ngModel)]="fitListHeight">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Change gutter" type="number" [(ngModel)]="ratioGutter">
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Headers</ng-template>
+      <mat-card-content class="pa-0">
+        <mat-grid-list cols="3" rowHeight="200px">
+          <mat-grid-tile *ngFor="let dog of dogs" style="background:gray">
+            <mat-grid-tile-header>
+              <mat-icon mat-grid-avatar>info_outline</mat-icon>
+              {{dog.name}}
+            </mat-grid-tile-header>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template matTabLabel>Footers</ng-template>
+      <mat-card-content class="pa-0">
+        <mat-grid-list cols="3" rowHeight="200px">
+          <mat-grid-tile *ngFor="let dog of dogs">
+            <img [alt]="dog.name" src="https://material.angularjs.org/material2_assets/ngconf/{{dog.name}}.png">
+            <mat-grid-tile-footer>
+              <h3 matLine>{{dog.name}}</h3>
+              <span matLine>Human: {{dog.human}}</span>
+              <mat-icon>star_border</mat-icon>
+            </mat-grid-tile-footer>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

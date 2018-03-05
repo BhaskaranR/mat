@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-title>Slider</mat-card-title>
+  <mat-card-subtitle>mat-slider is a component that allows users to select from a range of values by moving the slider thumb</mat-card-subtitle>
+  <mat-card-content>
+    <p>Default Slider</p>
+    Label <mat-slider #slidey></mat-slider>
+    {{slidey.value}}
+
+    <p>Slider with Min and Max</p>
+    <input [(ngModel)]="min">
+    <mat-slider [min]="min" [max]="max" tick-interval="5" #slider2></mat-slider>
+    {{slider2.value}}
+    <input [(ngModel)]="max">
+
+    <p>Disabled Slider</p>
+    <mat-slider disabled #slider3></mat-slider>
+    {{slider3.value}}
+
+    <p>Slider with set value</p>
+    <mat-slider value="43"></mat-slider>
+
+    <p>Slider with step defined</p>
+    <mat-slider min="1" max="100" step="20" #slider5></mat-slider>
+    {{slider5.value}}
+
+    <p>Slider with set tick interval</p>
+    <mat-slider tick-interval="auto"></mat-slider>
+    <mat-slider tick-interval="9"></mat-slider>
+
+    <p>Slider with Thumb Label</p>
+    <mat-slider thumb-label></mat-slider>
+
+    <p>Slider with one-way binding</p>
+    <mat-slider [value]="val" step="40"></mat-slider>
+    <input [(ngModel)]="val">
+
+    <p>Slider with two-way binding</p>
+    <mat-slider [(ngModel)]="demo" step="40"></mat-slider>
+    <input [(ngModel)]="demo">
+
+    <p>Inverted slider</p>
+    <mat-slider invert value="50" tick-interval="5"></mat-slider>
+
+    <p>Vertical slider</p>
+    <mat-slider vertical thumb-label tick-interval="auto" value="50"></mat-slider>
+
+    <p>Inverted vertical slider</p>
+    <mat-slider vertical invert thumb-label tick-interval="auto" value="50"></mat-slider>
+  </mat-card-content>
+</mat-card>

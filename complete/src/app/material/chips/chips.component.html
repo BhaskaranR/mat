@@ -1,0 +1,65 @@
+
+  <mat-card>
+    <mat-card-title>Chips</mat-card-title>
+    <mat-card-subtitle>an input component for building lists of strings or objects. The list items are displayed as 'chips'.</mat-card-subtitle>
+    
+    <mat-card-content>
+      <div class="pb-1">
+        <p class="mt-0">Simple</p>
+        <mat-chip-list>
+          <mat-chip>Chip 1</mat-chip>
+          <mat-chip>Chip 2</mat-chip>
+          <mat-chip>Chip 3</mat-chip>
+        </mat-chip-list>
+      </div>
+
+      <div class="pb-1">
+        <p>Unstyled</p>
+        <mat-chip-list>
+          <mat-basic-chip>Basic Chip 1</mat-basic-chip>
+          <mat-basic-chip>Basic Chip 2</mat-basic-chip>
+          <mat-basic-chip>Basic Chip 3</mat-basic-chip>
+        </mat-chip-list>
+      </div>
+
+      <p>Advanced</p>
+      <mat-chip-list selectable="false">
+        <mat-chip color="accent" selected="true">Selected/Colored</mat-chip>
+        <mat-chip color="warn" selected="true" *ngIf="visible"
+                 (destroy)="alert('chip destroyed')" (click)="toggleVisible()">
+          With Events
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Dynamic Chips</mat-card-title>
+    <mat-card-subtitle>an input component for building lists of strings or objects. The list items are displayed as 'chips'.</mat-card-subtitle>
+    <mat-card-content>
+      <div class="pb-1">
+        <p class="mt-0">Input Container</p>
+        <mat-chip-list>
+          <mat-chip *ngFor="let person of people" [color]="color">
+            {{person.name}}
+          </mat-chip>
+        </mat-chip-list>
+
+        <mat-form-field class="mt-1">
+          <input matInput #input (keyup.enter)="add(input)" placeholder="New Contributor..."/>
+        </mat-form-field>
+      </div>
+
+      <p>Stacked Chips</p>
+      <p>
+        You can also stack the chips if you want them on top of each other and/or use the
+        <code>(focus)</code> event to run custom code.
+      </p>
+      <mat-chip-list class="mat-chip-list-stacked">
+        <mat-chip *ngFor="let aColor of availableColors"
+                 (focus)="color = aColor.color" color="{{aColor.color}}" selected="true">
+          {{aColor.name}}
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+  </mat-card>

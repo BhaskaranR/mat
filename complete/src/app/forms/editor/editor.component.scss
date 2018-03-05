@@ -1,0 +1,14 @@
+@import "../../../assets/styles/scss/components/editor";
+:host {
+  quill-editor {
+    display: block;
+  }
+  .ng-invalid {
+    border: 1px dashed red;
+  }
+
+  .ql-container.ql-snow,
+  .ql-toolbar.ql-snow {
+    border: 0;
+  }
+}

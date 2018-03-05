@@ -1,0 +1,60 @@
+<mat-card>
+  <mat-card-title>Buttons</mat-card-title>
+  <mat-card-subtitle>mat-button is an HTML button or a tag enhanced with styling and animation to match the Material Design button spec</mat-card-subtitle>
+  <mat-card-content>
+    <div class="pb-1">
+      <p>Flat buttons</p>
+      <button mat-icon-button><mat-icon>favorite</mat-icon></button>
+      <button mat-button class="mr-1">Default</button>
+      <button mat-button color="primary" class="mr-1">Primary</button>
+      <button mat-button color="accent" class="mr-1">Accent</button>
+      <button mat-button color="warn" class="mr-1">Warn</button>
+      <button mat-button disabled class="mr-1">off</button>
+    </div>
+
+    <div class="pb-1">
+      <p>Raised buttons</p>
+      <button mat-raised-button mat-icon-button class="mr-1"><mat-icon>favorite</mat-icon></button>
+      <button mat-raised-button class="mr-1">Default</button>
+      <button mat-raised-button color="primary" class="mr-1">Primary</button>
+      <button mat-raised-button color="accent" class="mr-1">Accent</button>
+      <button mat-raised-button color="warn" class="mr-1">Warn</button>
+      <button mat-raised-button disabled class="mr-1">off</button>
+    </div>
+
+    <div class="pb-1">
+      <p>Small buttons</p>
+      <button mat-raised-button mat-icon-button mat-button-sm class="mr-1"><mat-icon>favorite</mat-icon></button>
+      <button mat-raised-button mat-button-sm class="mr-1">Default</button>
+      <button mat-raised-button mat-button-sm color="primary" class="mr-1">Primary</button>
+      <button mat-raised-button mat-button-sm color="accent" class="mr-1">Accent</button>
+      <button mat-raised-button mat-button-sm color="warn" class="mr-1">Warn</button>
+      <button mat-raised-button mat-button-sm disabled class="mr-1">off</button>
+    </div>
+    
+    <div class="pb-1">
+      <p>Fab buttons</p>
+      <button mat-fab class="mr-1"><mat-icon>add</mat-icon></button>
+      <button mat-fab disabled="" class="mr-1"><mat-icon>add</mat-icon></button>
+      <button mat-mini-fab class="mr-1"><mat-icon>add</mat-icon></button>
+      <button mat-mini-fab disabled class="mr-1"><mat-icon>add</mat-icon></button>
+    </div>
+
+    <div class="pb-0">
+      <p>Button toggles</p>
+      <mat-button-toggle class="mr-1">Single toggle</mat-button-toggle>
+      <mat-button-toggle-group name="alignment" class="mr-1">
+        <mat-button-toggle value="left"><mat-icon>format_align_left</mat-icon></mat-button-toggle>
+        <mat-button-toggle value="center"><mat-icon>format_align_center</mat-icon></mat-button-toggle>
+        <mat-button-toggle value="right"><mat-icon>format_align_right</mat-icon></mat-button-toggle>
+        <mat-button-toggle value="justify"><mat-icon>format_align_justify</mat-icon></mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-button-toggle-group multiple class="mr-1">
+        <mat-button-toggle>Flour</mat-button-toggle>
+        <mat-button-toggle>Eggs</mat-button-toggle>
+        <mat-button-toggle disabled>Sugar</mat-button-toggle>
+        <mat-button-toggle>Milk</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,144 @@
+<mat-card>
+  <mat-card-title>Lists</mat-card-title>
+  <mat-card-subtitle>mat-list is a container component that wraps and formats a series of line items</mat-card-subtitle>
+  <mat-card-content>
+    <p>Normal lists</p>
+    <mat-card>
+      <mat-list>
+        <h3 mat-subheader>Items</h3>
+        <mat-list-item *ngFor="let item of items">
+          {{item}}
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <p>Multiline lists <button (click)="thirdLine=!thirdLine">Show third line</button></p>
+    <mat-card>
+      <mat-list>
+        <mat-list-item *ngFor="let contact of contacts">
+          <h3 matLine>{{contact.name}}</h3>
+          <p matLine *ngIf="thirdLine">extra line</p>
+          <p matLine>{{contact.headline}}</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <p>3 Line List Item with Avatars and Icons</p>
+    <mat-card>
+      <mat-list>
+        <h3 mat-subheader>Today</h3>
+        <mat-list-item *ngFor="let message of messages">
+          <img mat-list-avatar [src]="message.image" alt="Image of {{message.from}}">
+          <h4 matLine>{{message.from}}</h4>
+          <p matLine>
+            <span>{{message.subject}} -- </span>
+            <span class="text-mat mat-text-muted">{{message.message}}</span>
+          </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let message of messages">
+          <h4 matLine>{{message.from}}</h4>
+          <p matLine> {{message.subject}} </p>
+          <p matLine class="text-mat mat-text-muted">{{message.message}} </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let message of messages">
+          <mat-icon mat-list-avatar>person</mat-icon>
+          <h4 matLine>{{message.from}}</h4>
+          <p matLine>
+            <span>{{message.subject}} -- </span>
+            <span class="text-mat mat-text-muted">{{message.message}}</span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <p>Dense lists</p>
+    <mat-card>
+      <mat-list dense>
+        <h3 mat-subheader>Items</h3>
+        <mat-list-item *ngFor="let item of items">
+          {{item}}
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <p>Multiline dense list</p>
+    <mat-card>
+      <mat-list dense>
+        <mat-list-item *ngFor="let contact of contacts">
+          <h3 matLine>{{contact.name}}</h3>
+          <p matLine>{{contact.headline}}</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <p>3 Line List Item with Avatars and Icons</p>
+    <mat-card>
+      <mat-list dense>
+        <h3 mat-subheader>Today</h3>
+        <mat-list-item *ngFor="let message of messages">
+          <img mat-list-avatar [src]="message.image" alt="Image of {{message.from}}">
+          <h4 matLine>{{message.from}}</h4>
+          <p matLine> {{message.subject}} </p>
+          <p matLine>{{message.message}} </p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+
+    <p>Checkbox list</p>
+    <mat-card>  
+      <mat-list>
+        <ng-template ngFor let-todo [ngForOf]="todos">
+          <mat-list-item>
+            <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+              <div fxFlex>
+                <mat-checkbox [checked]="todo.finished">
+                  {{todo.name}}
+                </mat-checkbox>
+              </div>
+              <div><mat-icon>more_horiz</mat-icon></div>
+            </div>
+          </mat-list-item>
+        </ng-template>
+      </mat-list>
+    </mat-card>
+
+    <p>Nav lists</p>
+    <mat-card>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let link of links" href="http://www.google.com">
+          {{ link.name }}
+        </a>
+      </mat-nav-list>
+      <hr>
+      <mat-nav-list>
+        <h3 mat-subheader *ngIf="infoClicked">More info!</h3>
+        <mat-list-item *ngFor="let link of links">
+          <a matLine href="http://www.google.com">{{ link.name }}</a>
+          <button mat-icon-button (click)="infoClicked=!infoClicked">
+            <mat-icon>info</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+      <hr>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let link of links" href="http://www.google.com">
+          <mat-icon mat-list-icon>folder</mat-icon>
+          <span matLine>{{ link.name }}</span>
+          <span matLine> Description </span>
+        </a>
+      </mat-nav-list>
+      <hr>
+      <mat-nav-list dense>
+        <mat-list-item *ngFor="let link of links">
+          <a matLine href="http://www.google.com">{{ link.name }}</a>
+          <button mat-icon-button (click)="infoClicked=!infoClicked">
+            <mat-icon class="material-icons">info</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
+
